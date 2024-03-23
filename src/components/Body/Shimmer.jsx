@@ -2,7 +2,7 @@ import React from "react";
 import { shimmer_units } from "../../constant";
 
 // Shimmer card to display with animation
-const CardShimmer = () => {
+const CardShimmer = ({ index }) => {
   return (
     <div className="shimmer-card">
       <div className="shimmer-img stroke animate"></div>
@@ -16,8 +16,8 @@ const CardShimmer = () => {
 const Shimmer = () => {
   return (
     <div className="shimmer-container">
-      {new Array(shimmer_units).fill(0).map((index) => {
-        return <CardShimmer key={index} />;
+      {new Array(shimmer_units).fill(0).map((_, index) => {
+        return <CardShimmer key={index} index={index} />;
       })}
     </div>
   );
